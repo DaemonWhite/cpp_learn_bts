@@ -8,10 +8,12 @@ private:
     eleve *TabEleve;
     int nbreEleves;
     float moy;
+
 public:
     Section();
     ~Section();
 
+    void AddEelve(void);
     void SaisieSection(void);
     void Traitrement(void);
     void AfficheSection(void);

@@ -10,6 +10,7 @@ eleve::eleve()
 
 void eleve::SaisieEleve(void)
 {
+
     cout << endl <<"Saisie du nom prenom : ";
     cin.getline(nom, 29);
     cout << "Saisie de la note : ";

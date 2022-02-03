@@ -13,6 +13,38 @@ Section::~Section()
     delete [] TabEleve;
 }
 
+void Section::AddEelve()
+{
+    //Copie du tablau par le pointeur
+    eleve  *TabCopie = TabEleve;
+
+    int newNbreEleve;
+
+    cout << "Nombre d'eleve : "<< nbreEleves<<endl;
+    cout << "Nombre de nouveaux Eleves : ";
+    cin >> newNbreEleve;
+    getchar();
+    //Rajoute les anciens eleves aux nouveaux
+    newNbreEleve += nbreEleves;
+
+    TabEleve = new eleve[newNbreEleve];
+
+
+    for (int i=0; i < newNbreEleve; i++)
+    {
+        TabEleve[i] = TabCopie[i];
+    }
+
+    for (int i=nbreEleves; i < newNbreEleve; i++)
+    {
+         TabEleve[i].SaisieEleve();
+    }
+
+    nbreEleves = newNbreEleve;
+
+    delete [] TabCopie;
+}
+
 void Section::SaisieSection(void)
 {
     cout << "Donner le nombre d'eleve : ";
@@ -46,5 +78,6 @@ void Section::AfficheSection(void)
     }
 
     Traitrement();
-    cout << "Moyenne : " << moy;
+
+    cout << "Moyenne : " << moy << endl;
 }
