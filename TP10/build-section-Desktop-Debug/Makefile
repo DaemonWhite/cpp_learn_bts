@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = section1.0.0
-DISTDIR = /home/travers/TP/c++_learn_bts/TP10/build-section-Desktop-Debug/.tmp/section1.0.0
+DISTDIR = /home/matheo/Documents/GitHub/cpp_learn_bts/TP10/build-section-Desktop-Debug/.tmp/section1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS)    
@@ -123,7 +123,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../section/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -217,7 +216,6 @@ Makefile: ../section/section.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -296,7 +294,6 @@ Makefile: ../section/section.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
-.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -357,10 +354,13 @@ compiler_clean:
 eleve.o: ../section/eleve.cpp ../section/eleve.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eleve.o ../section/eleve.cpp
 
-ihm.o: ../section/ihm.cpp ../section/ihm.h
+ihm.o: ../section/ihm.cpp ../section/ihm.h \
+		../section/section.h \
+		../section/eleve.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ihm.o ../section/ihm.cpp
 
-main.o: ../section/main.cpp ../section/section.h \
+main.o: ../section/main.cpp ../section/ihm.h \
+		../section/section.h \
 		../section/eleve.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../section/main.cpp
 

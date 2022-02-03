@@ -45,11 +45,18 @@ void Section::AddEelve()
     delete [] TabCopie;
 }
 
-void Section::SaisieSection(void)
+void Section::SaisieSection(int add)
 {
-    cout << "Donner le nombre d'eleve : ";
-    cin >> nbreEleves;
-    getchar();
+
+    if (add == 0)
+    {
+        cout << "Donner le nombre d'eleve : ";
+        cin >> nbreEleves;
+        getchar();
+    } else {
+        nbreEleves = add;
+    }
+
     TabEleve = new eleve[nbreEleves];
 
     for (int i=0; i<nbreEleves; i++)

@@ -17,12 +17,17 @@ void ihm::menu(void)
     cin >> choiceP;
 }
 
-void ihm::lancer(void)
+void ihm::lancer(int add)
 {
   do
   {
-   menu();
-   traitrechoix();
+   if (add > 0)
+   {
+       sec.SaisieSection(add);
+       add =0;
+   }
+    menu();
+    traitrechoix();
   }while (choiceP != 'f');
 }
 void ihm::traitrechoix()
