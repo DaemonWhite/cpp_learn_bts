@@ -14,7 +14,7 @@ public:
     ~Section();
 
     void AddEelve(void);
-    void SaisieSection(void);
+    void SaisieSection(int add =0);
     void Traitrement(void);
     void AfficheSection(void);
 };

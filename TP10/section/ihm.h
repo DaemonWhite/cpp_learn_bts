@@ -12,7 +12,7 @@ private:
       Section sec;
 
 public:
-    void lancer(void);
+    void lancer(int add);
     ihm();
 };
 
