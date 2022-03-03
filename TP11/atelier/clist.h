@@ -1,0 +1,17 @@
+#ifndef CLIST_H
+#define CLIST_H
+
+
+class Clist
+{
+private:
+    int ListePiece[150];
+    int Nbre_Elts;
+public:
+    Clist();
+    void AjouterPieces();
+    void AfficherListe();
+    void RechercherComptePieces();
+};
+
+#endif // CLIST_H
