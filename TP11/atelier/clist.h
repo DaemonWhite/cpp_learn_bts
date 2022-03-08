@@ -10,9 +10,9 @@ private:
 public:
     Clist();
     void AjouterPieces();
-    void InsertPiece(int decalen, int newValu);
+    bool InsertPiece(int decale, int newValu);
     void AfficherListe();
-    void RechercherComptePieces(int num_place,int & num_id, int & Nombre);
+    bool RechercherComptePieces(int num_place,int & num_id, int & Nombre);
 };
 
 #endif // CLIST_H

@@ -26,6 +26,8 @@ void ihm::lancer()
 void ihm::traitrechoix()
 {
     int num_id, Nombre, search;
+    bool error=false;
+
     switch (choiceP)
     {
         case 's' :
@@ -37,15 +39,25 @@ void ihm::traitrechoix()
             cin >> Nombre;
             cout << "Entre le Nouvelle id : ";
             cin >> num_id;
-            client.InsertPiece(num_id, Nombre);
+            error = client.InsertPiece(num_id, Nombre);
+            if (error)
+            {
+                cout << "Erreur : La Place " << Nombre << " et non atribuer" << endl;
+            }
         break;
         case 'a' : client.AfficherListe(); break;
         case 'r' :
             cout << "Entrer l'a place de la piece chercher" << endl;
             cin >> search;
             cout << "Place de la piece rechercher" << endl;
-            client.RechercherComptePieces(search,num_id, Nombre);
-            cout << "ID : " << num_id << " Nombre : " << Nombre << endl;
+            error = client.RechercherComptePieces(search,num_id, Nombre);
+            if (!error)
+            {
+                cout << "ID : " << num_id << " Nombre : " << Nombre << endl;
+            } else {
+                cout << "Erreur : La Place " << search << " et non atribuer" << endl;
+            }
+
         break;
         case 'f' : cout << "fermeture du programe"<< endl; break;
         default: cout << "Valeur incorrecte" <<endl;

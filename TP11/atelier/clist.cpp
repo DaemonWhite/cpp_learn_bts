@@ -35,18 +35,27 @@ void Clist::AjouterPieces()
     }
     while(lastValue != 0);
 }
-void Clist::InsertPiece(int decale, int newValu)
+bool Clist::InsertPiece(int decale, int newValu)
 {
-    for (int i=Nbre_Elts; i > decale-1; i--)
+    bool error = false;
+
+    if (Nbre_Elts >= decale)
     {
-        //cout << ListePiece[i] << " <-- " << ListePiece[i-1] << endl;
-        ListePiece[i] = ListePiece[i-1];
+
+        for (int i=Nbre_Elts; i > decale-1; i--)
+        {
+            //cout << ListePiece[i] << " <-- " << ListePiece[i-1] << endl;
+            ListePiece[i] = ListePiece[i-1];
+        }
+
+        Nbre_Elts++;
+        ListePiece[decale-1] = newValu;
+
+     } else {
+        error = true;
     }
 
-    Nbre_Elts++;
-    ListePiece[decale-1] = newValu;
-
-
+    return error;
 }
 
 void Clist::AfficherListe()
@@ -62,10 +71,11 @@ void Clist::AfficherListe()
     }
 }
 
-void Clist::RechercherComptePieces(int num_place,int & num_id, int & Nombre)
+bool Clist::RechercherComptePieces(int num_place,int & num_id, int & Nombre)
 {
     num_id = ListePiece[num_place-1];
     Nombre =0;
+    bool error = false;
 
     if (Nbre_Elts >= num_place)
     {
@@ -77,6 +87,9 @@ void Clist::RechercherComptePieces(int num_place,int & num_id, int & Nombre)
             }
         }
      } else {
-        cout << "Valeur inexistante";
+        error = true;
+
     }
+
+    return error;
 }
