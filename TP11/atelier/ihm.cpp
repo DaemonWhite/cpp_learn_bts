@@ -6,6 +6,7 @@ using namespace std;
 void ihm::menu()
 {
     cout << "taper 's' \tpour saisir des piéces"    <<endl;
+    cout << "taper 'i' \tpour insere une valeur" << endl;
     cout << "taper 'a' \tpour afficher les pièces"  <<endl;
     cout << "taper 'r' \tpour rechercer des pièces" <<endl;
     cout << "taper 'f' \tpour fermer le programe"   <<endl;
@@ -30,6 +31,13 @@ void ihm::traitrechoix()
         case 's' :
             client.AjouterPieces();
             cout << "Fermeture du système d'ajout de pièce" << endl;
+        break;
+        case 'i' :
+            cout << "Entrer la place d'incertion : ";
+            cin >> Nombre;
+            cout << "Entre le Nouvelle id : ";
+            cin >> num_id;
+            client.InsertPiece(num_id, Nombre);
         break;
         case 'a' : client.AfficherListe(); break;
         case 'r' :

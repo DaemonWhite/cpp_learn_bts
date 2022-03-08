@@ -11,6 +11,7 @@ Clist::Clist()
 void Clist::AjouterPieces()
 {
     int lastValue;
+    cout << "0 Mettra fin à la saisie" << endl;
     cout << "Il y'a actuellement " << Nbre_Elts << " piece(s)" << endl;
 
 
@@ -34,12 +35,30 @@ void Clist::AjouterPieces()
     }
     while(lastValue != 0);
 }
+void Clist::InsertPiece(int decale, int newValu)
+{
+    for (int i=Nbre_Elts; i > decale-1; i--)
+    {
+        //cout << ListePiece[i] << " <-- " << ListePiece[i-1] << endl;
+        ListePiece[i] = ListePiece[i-1];
+    }
+
+    Nbre_Elts++;
+    ListePiece[decale-1] = newValu;
+
+
+}
 
 void Clist::AfficherListe()
 {
-    for (int i=0; i < Nbre_Elts; i++)
+    if (Nbre_Elts != 0)
     {
-        cout << "Place " << i+1 << " : " << ListePiece[i] << endl;
+        for (int i=0; i < Nbre_Elts; i++)
+        {
+            cout << "Place " << i+1 << " : " << ListePiece[i] << endl;
+        }
+    } else {
+        cout << "Commencer par saisire une liste" <<endl;
     }
 }
 
@@ -48,11 +67,16 @@ void Clist::RechercherComptePieces(int num_place,int & num_id, int & Nombre)
     num_id = ListePiece[num_place-1];
     Nombre =0;
 
-    for (int i=0; i < Nbre_Elts; i++)
+    if (Nbre_Elts >= num_place)
     {
-        if (ListePiece[i] == num_id)
+        for (int i=0; i < Nbre_Elts; i++)
         {
-            Nombre++;
+            if (ListePiece[i] == num_id)
+            {
+                Nombre++;
+            }
         }
+     } else {
+        cout << "Valeur inexistante";
     }
 }

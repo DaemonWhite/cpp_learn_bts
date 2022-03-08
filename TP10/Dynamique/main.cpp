@@ -20,6 +20,8 @@ int main()
     {
         cout << i+1 << "\t" << Tab[i]<<"\n";
     }
+    
+    delete [] tab;
 
     return 0;
 }

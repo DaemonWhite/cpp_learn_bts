@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = atelier1.0.0
-DISTDIR = /home/travers/TP/cpp_learn_bts/TP11/build-atelier-Desktop-Debug/.tmp/atelier1.0.0
+DISTDIR = /home/matheo/Projet/CPP/cpp_learn_bts/TP11/build-atelier-Desktop-Debug/.tmp/atelier1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS)    
@@ -53,8 +53,10 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../atelier/clist.cpp \
+		../atelier/ihm.cpp \
 		../atelier/main.cpp 
 OBJECTS       = clist.o \
+		ihm.o \
 		main.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -133,7 +135,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../atelier/atelier.pro clist.h ../atelier/clist.cpp \
+		../atelier/atelier.pro clist.h \
+		ihm.h ../atelier/clist.cpp \
+		../atelier/ihm.cpp \
 		../atelier/main.cpp
 QMAKE_TARGET  = atelier
 DESTDIR       = 
@@ -349,7 +353,12 @@ compiler_clean:
 clist.o: ../atelier/clist.cpp ../atelier/clist.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o clist.o ../atelier/clist.cpp
 
-main.o: ../atelier/main.cpp ../atelier/clist.h
+ihm.o: ../atelier/ihm.cpp ../atelier/ihm.h \
+		../atelier/clist.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ihm.o ../atelier/ihm.cpp
+
+main.o: ../atelier/main.cpp ../atelier/ihm.h \
+		../atelier/clist.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../atelier/main.cpp
 
 ####### Install
