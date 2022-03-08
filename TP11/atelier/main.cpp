@@ -1,8 +1,10 @@
-#include "clist.h"
+#include "ihm.h"
+
 
 int main()
 {
-    Clist client;
-    client.AjouterPieces();
+    ihm ui;
+    ui.lancer();
+
     return 0;
 }

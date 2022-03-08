@@ -11,14 +11,14 @@ Clist::Clist()
 void Clist::AjouterPieces()
 {
     int lastValue;
-    cout << "Il y'a actuellement " << Nbre_Elts << "piece(s)" << endl;
+    cout << "Il y'a actuellement " << Nbre_Elts << " piece(s)" << endl;
 
 
     do
     {
         if (Nbre_Elts < 150)
         {
-            cout << "Entrer l'id de la piece " << Nbre_Elts+1 << endl;
+            cout << "Entrer l'id de la piece à la place " << Nbre_Elts+1 << endl;
             cin >> lastValue;
 
             if (lastValue!=0)
@@ -33,14 +33,26 @@ void Clist::AjouterPieces()
         }
     }
     while(lastValue != 0);
-
-    cout << "Fermeture du système d'ajout de pièce" << endl;
 }
 
 void Clist::AfficherListe()
 {
-    for (int i=0; i < Nbre_Elts; )
+    for (int i=0; i < Nbre_Elts; i++)
     {
+        cout << "Place " << i+1 << " : " << ListePiece[i] << endl;
+    }
+}
 
+void Clist::RechercherComptePieces(int num_place,int & num_id, int & Nombre)
+{
+    num_id = ListePiece[num_place-1];
+    Nombre =0;
+
+    for (int i=0; i < Nbre_Elts; i++)
+    {
+        if (ListePiece[i] == num_id)
+        {
+            Nombre++;
+        }
     }
 }

@@ -11,7 +11,7 @@ public:
     Clist();
     void AjouterPieces();
     void AfficherListe();
-    void RechercherComptePieces();
+    void RechercherComptePieces(int num_place,int & num_id, int & Nombre);
 };
 
 #endif // CLIST_H

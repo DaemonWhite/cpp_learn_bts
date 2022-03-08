@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         clist.cpp \
+        ihm.cpp \
         main.cpp
 
 HEADERS += \
-    clist.h
+    clist.h \
+    ihm.h
