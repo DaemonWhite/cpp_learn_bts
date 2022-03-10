@@ -11,6 +11,7 @@ public:
     Clist();
     void AjouterPieces();
     bool InsertPiece(int decale, int newValu);
+    bool DeletePiece(int delPlace);
     void AfficherListe();
     bool RechercherComptePieces(int num_place,int & num_id, int & Nombre);
 };
