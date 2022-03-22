@@ -12,6 +12,8 @@ private:
 public:
 
     void AjoutPiece(int Num_Ident);
+    bool SupprPiece(int Num_Place);
+    void SupprDesPieces(int Num_ID);
     bool RechercherComptedsPieces(int Num_Place,int& Nombre, int& Num_Ident);
     bool InsererPiece(int Num_Ident, int Num_Place);
 

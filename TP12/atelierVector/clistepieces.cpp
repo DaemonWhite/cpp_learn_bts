@@ -14,7 +14,7 @@ bool CListepieces::InsererPiece(int Num_Ident, int Num_Place)
 {
     int Nbre_Elts = ListePieces.size();
     bool error=false;
-    if (Num_Place < Nbre_Elts && Num_Place>=0 && Num_Ident <= 0)
+    if (Num_Place < Nbre_Elts && Num_Place > 0 && Num_Ident < 0)
     {
         ListePieces.insert(ListePieces.begin()+Num_Place-1, Num_Ident);
     } else {
@@ -43,4 +43,36 @@ bool CListepieces::RechercherComptedsPieces(int Num_Place,int& Nombre, int& Num_
    }
 
    return error;
+}
+
+bool CListepieces::SupprPiece(int Num_Place)
+{
+    bool error=false;
+    int Nbre_Elts = ListePieces.size();
+
+    if (Num_Place <= Nbre_Elts && Num_Place > 0)
+    {
+        ListePieces.erase(ListePieces.begin()+Num_Place-1);
+    } else {
+        error=true;
+    }
+
+    return error;
+}
+
+void CListepieces::SupprDesPieces(int Num_ID)
+{
+    int Nbre_Elts = ListePieces.size();
+
+
+    for (int i=0; i < Nbre_Elts; i++)
+    {
+        if ( ListePieces[i] == Num_ID)
+        {
+            ListePieces.erase(ListePieces.begin()+i);
+            Nbre_Elts = ListePieces.size();
+            i--;
+        }
+    }
+
 }

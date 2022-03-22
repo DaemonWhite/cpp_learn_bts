@@ -5,6 +5,8 @@ void ihm::Menu()
 {
     cout << "Pour saisir, taper s" << endl;
     cout << "Pour inserer, taper i" << endl;
+    cout << "Poue suprimer une place, taper d" << endl;
+    cout << "Poue suprimer à partir de l'id, taper m" << endl;
     cout << "Pour rechercher, taper r" << endl;
     cout << "Pour afficher, taper a" << endl;
     cout << "Pour finir, taper f" << endl;
@@ -35,7 +37,25 @@ void ihm::TraiteChoix()
                 cin >> Nombre;
                 cout << "Entre la Nouvelle id : ";
                 cin >> num_id;
-                MaListe.InsererPiece(num_id, Nombre);
+                error = MaListe.InsererPiece(num_id, Nombre);
+                if(error)
+                {
+                    cout << "Valeur incorecte" << endl;
+                }
+            break;
+            case 'd' :
+                cout << "Entrer la place de supression : ";
+                cin >> search;
+                error = MaListe.SupprPiece(search);
+                if(error)
+                {
+                    cout << "Valeur incorecte" << endl;
+                }
+            break;
+            case 'm' :
+                cout << "Entrer l'id à suprimer : ";
+                cin >> search;
+                MaListe.SupprDesPieces(search);
             break;
             case 'a' :
                 AfficherListe();
@@ -44,8 +64,12 @@ void ihm::TraiteChoix()
                 cout << "Entrer la place de la pièce cherchée" << endl;
                 cin >> search;
                 cout << "Place de la pièce recherchée" << endl;
-                MaListe.RechercherComptedsPieces(search,Nombre, num_id);
-                cout << "ID : " << num_id << " Nombre : " << Nombre << endl;
+                error = MaListe.RechercherComptedsPieces(search,Nombre, num_id);
+                if (!error){
+                    cout << "ID : " << num_id << " Nombre : " << Nombre << endl;
+                } else {
+                    cout << "Valeur incorecte"<<endl;
+                }
             break;
             case 'f' : cout << "fermeture du programme"<< endl; break;
             default: cout << "Valeur incorrecte" <<endl;
