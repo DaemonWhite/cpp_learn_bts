@@ -17,6 +17,8 @@ public:
     bool RechercherComptedsPieces(int Num_Place,int& Nombre, int& Num_Ident);
     bool InsererPiece(int Num_Ident, int Num_Place);
 
+    void EnregistrerListe();
+
     vector<int> RetListe(); //accenseur du vecteur
 };
 

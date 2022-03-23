@@ -1,4 +1,5 @@
 #include "clistepieces.h"
+#include <fstream>
 
 vector<int> CListepieces::RetListe()
 {
@@ -75,4 +76,18 @@ void CListepieces::SupprDesPieces(int Num_ID)
         }
     }
 
+}
+
+//load file
+
+void CListepieces::EnregistrerListe()
+{
+    ofstream file;
+    int i=0;
+    int tmp = ListePieces[0];
+    char tmpChar = new tmp:
+    file.open("liste.txt");
+    file.write(tmpChar, 50);
+
+    file.close();
 }
