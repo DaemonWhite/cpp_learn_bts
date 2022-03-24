@@ -7,6 +7,7 @@ void ihm::Menu()
     cout << "Pour inserer, taper i" << endl;
     cout << "Poue suprimer une place, taper d" << endl;
     cout << "Poue suprimer à partir de l'id, taper m" << endl;
+    cout << "Pour enregistrer, taper e" << endl;
     cout << "Pour rechercher, taper r" << endl;
     cout << "Pour afficher, taper a" << endl;
     cout << "Pour finir, taper f" << endl;
@@ -51,6 +52,11 @@ void ihm::TraiteChoix()
                 {
                     cout << "Valeur incorecte" << endl;
                 }
+            break;
+            case 'e' :
+                cout << "Enregistrement des fichier" << endl;
+                MaListe.EnregistrerListe();
+                cout << "Fichier enregistrés" << endl;
             break;
             case 'm' :
                 cout << "Entrer l'id à suprimer : ";

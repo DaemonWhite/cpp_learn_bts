@@ -83,11 +83,12 @@ void CListepieces::SupprDesPieces(int Num_ID)
 void CListepieces::EnregistrerListe()
 {
     ofstream file;
-    int i=0;
-    int tmp = ListePieces[0];
-    char tmpChar = new tmp:
     file.open("liste.txt");
-    file.write(tmpChar, 50);
+    int nbreElts = ListePieces.size();
+    for (int i=0; i< nbreElts; i++)
+    {
+        file << ListePieces[i] << endl;
+    }
 
     file.close();
 }
