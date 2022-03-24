@@ -92,3 +92,27 @@ void CListepieces::EnregistrerListe()
 
     file.close();
 }
+
+bool CListepieces::ChargeListe()
+{
+    bool error=false;
+    int tmp;
+    ifstream file("liste.txt");
+
+    if (file)
+    {
+        do {
+            file >> tmp;
+            if (file)
+            {
+                AjoutPiece(tmp);
+            }
+
+        } while(file);
+
+    } else {
+        error=true;
+    }
+
+    return error;
+}

@@ -8,6 +8,7 @@ void ihm::Menu()
     cout << "Poue suprimer une place, taper d" << endl;
     cout << "Poue suprimer à partir de l'id, taper m" << endl;
     cout << "Pour enregistrer, taper e" << endl;
+    cout << "Pour charger, taper c" << endl;
     cout << "Pour rechercher, taper r" << endl;
     cout << "Pour afficher, taper a" << endl;
     cout << "Pour finir, taper f" << endl;
@@ -57,6 +58,16 @@ void ihm::TraiteChoix()
                 cout << "Enregistrement des fichier" << endl;
                 MaListe.EnregistrerListe();
                 cout << "Fichier enregistrés" << endl;
+            break;
+            case 'c' :
+                cout << "Changement en cour" << endl;
+                error = MaListe.ChargeListe();
+                if (!error)
+                {
+                    cout << "Charger avec succé" << endl;
+                } else {
+                    cout << "Fichier non existant" << endl;
+                }
             break;
             case 'm' :
                 cout << "Entrer l'id à suprimer : ";
@@ -119,7 +130,7 @@ void ihm::SaisirListe()
 
             if (lastValue!=0)
             {
-                nbreElts = liste.size();
+                nbreElts++;
                 MaListe.AjoutPiece(lastValue);
             }
 

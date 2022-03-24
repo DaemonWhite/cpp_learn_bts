@@ -18,6 +18,7 @@ public:
     bool InsererPiece(int Num_Ident, int Num_Place);
 
     void EnregistrerListe();
+    bool ChargeListe();
 
     vector<int> RetListe(); //accenseur du vecteur
 };
