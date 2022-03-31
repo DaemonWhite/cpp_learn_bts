@@ -99,6 +99,8 @@ bool CListepieces::ChargeListe()
     int tmp;
     ifstream file("liste.txt");
 
+    ListePieces.clear();
+
     if (file)
     {
         do {
