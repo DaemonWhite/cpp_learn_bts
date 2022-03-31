@@ -31,7 +31,7 @@ void ClisteEleve::SaiSieNote()
         }while (file);
 
     } else {
-        cout << "erreur --> fichier non trouver" << endl;
+        cout << "erreur --> fichier non trouvé" << endl;
     }
 
 }
