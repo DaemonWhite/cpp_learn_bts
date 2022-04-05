@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    char Source[30], Destination[30];
+
+    ifstream fileSource;
+    ofstream fileDestination;
+
+    char tampon[512];
+
+    long sizeFile;
+
+    cout << "Saisire le chemin du fichier à copier" << endl;
+    cin >> Source;
+    cout << "Saisir le chemin du fichier destinations" << endl;
+    cin >> Destination;
+
+    fileSource.open(Source);
+    fileDestination.open(Destination);
+
+    if(!fileSource)
+    {
+        cout << "Erreur 1 --> Le fichier n'existe pas" << endl;
+        exit(1);
+    }
+
+
+    if(!fileDestination)
+    {
+        cout << "Erreur 2 --> Le fichier n'existe pas" << endl;
+        exit(2);
+    }
+
+    sizeFile = fileSource.tellg();
+
+
+
+    do
+    {
+        fileSource.read(tampon, sizeof(tampon));
+
+    } while (sizeFile);
+
+
+
+
+    return 0;
+}
