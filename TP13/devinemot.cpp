@@ -1,5 +1,4 @@
 #include "devinemot.h"
-#include <iostream>
 
 DevineMot::DevineMot()
 {
@@ -22,17 +21,20 @@ bool DevineMot::Assistance()
         mot.erase(0,1);
     }
 
-    cout << "next " << MotMelange << endl;
-
     if (MotMelange != MotADeviner)
     {
-        alea = rand() % mot.size();
-        MotMelange += mot[alea];
-        mot.erase(alea, 1);
+        do {
+            alea = rand() % mot.size();
+            MotMelange += mot[alea];
+            mot.erase(alea, 1);
+        } while(mot.size() != 0);
+
         ret=false;
     } else {
         ret=true;
     }
+
+    aide++;
 
     return ret;
 }

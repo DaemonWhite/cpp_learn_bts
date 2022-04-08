@@ -39,7 +39,7 @@ void ihm::jouer()
             if (end)
             {
                 vraix=0;
-                cout << "Bon bas vous avez laisser l'ordi faire";
+                cout << "Bon bas vous avez laisser l'ordi faire" <<endl;
             }
             i++;
         } else {
