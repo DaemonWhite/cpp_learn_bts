@@ -34,8 +34,8 @@ void ihm::jouer()
         {
             cout << "Mauvaise réponce" << endl;
             cout << "Essai " << i << endl;
-            PresenterMotMelanger();
             end = monJeu.Assistance();
+            PresenterMotMelanger();
             if (end)
             {
                 vraix=0;
