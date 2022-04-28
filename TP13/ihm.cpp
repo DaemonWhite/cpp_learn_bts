@@ -45,7 +45,7 @@ void ihm::jouer()
         } else {
             cout << "Bonne réponce" << endl;
 
-            cout << "Vous avais mis " << i << " essay";
+            cout << "Vous avais mis " << i << " essay" << endl;
         }
     } while (vraix != 0);
 
