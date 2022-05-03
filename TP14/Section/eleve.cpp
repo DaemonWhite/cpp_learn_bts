@@ -15,6 +15,10 @@ void eleve::SaisieEleve()
     getchar();
 }
 
+void eleve::AfficheEleve(){
+    cout << nom <<'\t'<<note<<endl;
+}
+
 float eleve::getNote()
 {
     return note;

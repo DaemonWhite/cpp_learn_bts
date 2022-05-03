@@ -1,9 +1,15 @@
-#include <iostream>
+#include "section.h"
 
-using namespace std;
+
 
 int main()
 {
+    section test;
+
+    //test.AjoutEleves();
+    test.LireSection();
+    test.AfficherSection();
+    //test.EnregistreSection();
 
     return 0;
 }

@@ -9,6 +9,7 @@ class section
 private:
     eleve UnEleve;
     vector <eleve> TabEleve;
+    fstream flux;
     int nbreEleves;
     float moy;
 public:
@@ -16,6 +17,8 @@ public:
     void AjoutEleves();
     void Traitement();
     void AfficherSection();
+    void EnregistreSection();
+    void LireSection();
 };
 
 #endif // SECTION_H
