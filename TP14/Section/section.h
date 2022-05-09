@@ -19,6 +19,7 @@ public:
     void AfficherSection();
     void EnregistreSection();
     void LireSection();
+    void SuprimeEleve();
 };
 
 #endif // SECTION_H

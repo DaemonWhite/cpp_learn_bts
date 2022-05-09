@@ -35,16 +35,23 @@ void section::Traitement()
 
 void section::AfficherSection()
 {
-    Traitement();
-    for (int i=0; i<nbreEleves; i++)
+    if (nbreEleves!=0)
     {
-        TabEleve[i].AfficheEleve();
+        Traitement();
+        cout << "id\t" << "| nom\t" << "| note" << endl;
+        for (int i=0; i<nbreEleves; i++)
+        {
+            cout << i << "\t| ";
+            TabEleve[i].AfficheEleve();
+        }
+        cout << "Moyenne\t" << moy << endl;
+    } else {
+        cout << "il n'y a pas d'eleves"<<endl;
     }
-    cout << "Moyenne\t" << moy << endl;
 }
 void section::EnregistreSection()
 {
-    flux.open("../section/classe", ios::app);
+    flux.open("../section/classe", ios::out);
     for (int i=0; i<nbreEleves; i++)
     {
         TabEleve[i].EnregistrerEleve(flux);
@@ -69,4 +76,12 @@ void section::LireSection()
             cout << "Erreur --> fichier manquant" << endl;
         }
     flux.close();
+}
+void section::SuprimeEleve()
+{
+    int position;
+    cout<< "Position a suprimer : ";
+    cin >> position;
+    TabEleve.erase(TabEleve.begin()+position);
+    nbreEleves--;
 }

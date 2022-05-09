@@ -1,15 +1,13 @@
-#include "section.h"
+#include "ihm.h"
 
 
 
 int main()
 {
-    section test;
+    ihm ui;
 
-    //test.AjoutEleves();
-    test.LireSection();
-    test.AfficherSection();
-    //test.EnregistreSection();
+    ui.lancer();
+
 
     return 0;
 }

@@ -16,7 +16,7 @@ void eleve::SaisieEleve()
 }
 
 void eleve::AfficheEleve(){
-    cout << nom <<'\t'<<note<<endl;
+    cout << nom <<"\t| "<<note<<endl;
 }
 
 float eleve::getNote()
