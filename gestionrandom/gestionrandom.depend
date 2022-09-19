@@ -25,3 +25,18 @@
 	<time.h>
 	<algorithm>
 
+1663573943 source:c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\main.cpp
+	<iostream>
+	"superrand.h"
+
+1663583713 c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\include\superrand.h
+	<iostream>
+	<vector>
+	<random>
+
+1663578914 source:c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\src\superrand.cpp
+	"superrand.h"
+	<stdlib.h>
+	<time.h>
+	<algorithm>
+
