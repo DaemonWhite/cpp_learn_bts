@@ -13,14 +13,12 @@ superrand::superrand(int mini, int maxi, int taille, bool exclusif)
     this->taille = taille;
     this->exclusif = exclusif;
 
-    dis = std::uniform_int_distribution <int>(mini,maxi);
-
-
-
-
-
-
     inversionMaxMini();
+
+    this->dis = std::uniform_int_distribution <int>(this->mini, this->maxi);
+
+    remplirTab();
+
 }
 
 superrand::~superrand()
@@ -42,6 +40,15 @@ void superrand::inversionMaxMini() {
 
 }
 
+void superrand::inversionMaxMini(int & mini, int & maxi) {
+    if (maxi < mini) {
+        int tmp = mini;
+
+        mini = maxi;
+        maxi = tmp;
+    }
+}
+
 //Private function
 
 int superrand::calculValeur()
@@ -50,13 +57,39 @@ int superrand::calculValeur()
     return ret;
 }
 
+void superrand::testTaille() {
+    if (this->exclusif) {
+        this->taille = this->maxi - this->mini;
+        tabRandom.resize(this->taille);
+    }
+}
+
 //Public function
 void superrand::remplirTab() {
-    const short e=0;
-    for (int i = this->taille; i <= e; i++) {
-        this->remplirTab[i] = calculValeur();
-    }
+    this->tabRandom.resize(this->taille, 0);
+    std::vector<int>::iterator it;
+    int index = 0;
 
+    do{
+        int rand = calculValeur();
+
+        if (this->exclusif == true) {
+            it = std::find(tabRandom.begin(), index, rand);
+            if (it != tabRandom[index]){
+
+            }
+        }
+
+    }while(this->taille != 0);
+
+}
+
+int superrand::valeurUnique(int valMini, int valMaxi) {
+
+    inversionMaxMini(valMini, valMaxi);
+    std::uniform_int_distribution <int> dis(valMini,valMaxi);
+
+    return dis(mt);
 }
 
 //Public access
@@ -65,16 +98,19 @@ void superrand::remplirTab() {
 void superrand::setMaxi(int maxi) {
     this->maxi = maxi;
     inversionMaxMini();
+    remplirTab();
 }
 
 void superrand::setMini(int mini) {
     this->mini = mini;
     inversionMaxMini();
+    remplirTab();
 }
 
 void superrand::setTaille(int taille) {
     this->taille = taille;
     inversionMaxMini();
+    remplirTab();
 }
 
 //Acsesseur en lecture.

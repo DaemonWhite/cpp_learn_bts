@@ -29,12 +29,12 @@
 	<iostream>
 	"superrand.h"
 
-1663583713 c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\include\superrand.h
+1664184605 c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\include\superrand.h
 	<iostream>
 	<vector>
 	<random>
 
-1663578914 source:c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\src\superrand.cpp
+1664187906 source:c:\users\matheo\documents\projet\cpp_learn_bts\gestionrandom\src\superrand.cpp
 	"superrand.h"
 	<stdlib.h>
 	<time.h>

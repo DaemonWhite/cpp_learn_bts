@@ -17,6 +17,7 @@ class superrand
         void testTaille();
         int calculValeur();
         void inversionMaxMini();
+        static void inversionMaxMini(int& mini, int& maxi);
         static std::mt19937 mt;
 
     public:
