@@ -15,9 +15,7 @@ superrand::superrand(int mini, int maxi, int taille, bool exclusif)
 
     inversionMaxMini();
 
-    this->dis = std::uniform_int_distribution <int>(this->mini, this->maxi);
-
-    remplirTab();
+    this->remplirTab();
 
 }
 
@@ -59,28 +57,38 @@ int superrand::calculValeur()
 
 void superrand::testTaille() {
     if (this->exclusif) {
-        this->taille = this->maxi - this->mini;
-        tabRandom.resize(this->taille);
+        this->taille = this->maxi - this->mini + 1;
     }
+    this->tabRandom.resize(this->taille);
 }
 
 //Public function
 void superrand::remplirTab() {
-    this->tabRandom.resize(this->taille, 0);
+    this->dis = std::uniform_int_distribution <int>(this->mini, this->maxi);
+    this->testTaille();
+    std::vector<int> tmpTab;
     std::vector<int>::iterator it;
-    int index = 0;
+    int rand;
 
     do{
-        int rand = calculValeur();
+        rand = calculValeur();
 
-        if (this->exclusif == true) {
-            it = std::find(tabRandom.begin(), index, rand);
-            if (it != tabRandom[index]){
+        if (this->exclusif == true && tmpTab.size() > 0) {
+            it = std::find(tmpTab.begin(), tmpTab.end(), rand);
 
+            if (it != tmpTab.end()) {
+                tmpTab.back();
+            } else {
+                tmpTab.push_back(rand);
             }
+
+        } else {
+            tmpTab.push_back(rand);
         }
 
-    }while(this->taille != 0);
+    }while(this->tabRandom.size() != tmpTab.size());
+
+    this->tabRandom = tmpTab;
 
 }
 
@@ -97,20 +105,20 @@ int superrand::valeurUnique(int valMini, int valMaxi) {
 //Acsesseur en ecriture.
 void superrand::setMaxi(int maxi) {
     this->maxi = maxi;
-    inversionMaxMini();
-    remplirTab();
+    this->inversionMaxMini();
+    this->remplirTab();
 }
 
 void superrand::setMini(int mini) {
     this->mini = mini;
-    inversionMaxMini();
-    remplirTab();
+    this->inversionMaxMini();
+    this->remplirTab();
 }
 
 void superrand::setTaille(int taille) {
     this->taille = taille;
-    inversionMaxMini();
-    remplirTab();
+    this->inversionMaxMini();
+    this->remplirTab();
 }
 
 //Acsesseur en lecture.
