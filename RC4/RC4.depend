@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1584209020 source:c:\users\matheo\documents\projet\cpp_learn_bts\rc4\main.cpp
+1665398064 source:c:\users\matheo\documents\projet\cpp_learn_bts\rc4\main.cpp
 	<iostream>
+	<RC4.h>
 
 1664784740 source:c:\users\matheo\documents\projet\cpp_learn_bts\rc4\src\superrand.cpp
 	"superrand.h"
@@ -13,10 +14,10 @@
 	<vector>
 	<random>
 
-1665394931 source:c:\users\matheo\documents\projet\cpp_learn_bts\rc4\src\rc4.cpp
+1665397770 source:c:\users\matheo\documents\projet\cpp_learn_bts\rc4\src\rc4.cpp
 	"RC4.h"
 	"superrand.h"
 
-1665395472 c:\users\matheo\documents\projet\cpp_learn_bts\rc4\include\rc4.h
+1665395670 c:\users\matheo\documents\projet\cpp_learn_bts\rc4\include\rc4.h
 	<vector>
 

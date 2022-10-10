@@ -19,10 +19,11 @@ RC4::RC4(unsigned char *cle, int tailleCle) : tailleTableauEtat(255){
 RC4::RC4(std::vector<unsigned char> cle): tailleTableauEtat(255) {
     this->maCle = cle;
     this->tailleCle = cle.size();
+    this->initCodageDecodage();
 }
 
 void RC4::genereCle() {
-
+        this->tableauEtat.resize(tailleTableauEtat);
         superrand cle( 1,255, this->tailleCle );
         std::vector <int> temp = cle.getTableau();
         //this->maCle = std::vector <unsigned char> (temp.begin(),temp.end());
@@ -35,6 +36,7 @@ void RC4::initCodageDecodage() {
     for (this->i = 0; i < this->tailleTableauEtat-1; this->i++){
         this->tableauEtat[this->i] = this->i;
     }
+    this->melangeTableauEtat();
 }
 
 void RC4::melangeTableauEtat() {
