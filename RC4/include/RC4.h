@@ -6,7 +6,7 @@ class RC4
 {
     public:
         RC4(unsigned int tailleCle = 0);
-        RC4(unsigned char *cle, int tailleCle);
+        RC4(unsigned char *cle,unsigned int tailleCle);
         RC4(std::vector<unsigned char> cle);
         unsigned char chiffrage(unsigned char octet);
         std::vector<unsigned char> getCle();

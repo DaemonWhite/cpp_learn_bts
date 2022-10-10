@@ -7,23 +7,27 @@ RC4::RC4(unsigned int tailleCle ): tailleTableauEtat(255){
     if (tailleCle == 0) {
         this->tailleCle = superrand::valeurUnique(40, 255);
     }
+    this->tableauEtat.resize(tailleTableauEtat);
     this->genereCle();
     this->initCodageDecodage();
 }
-RC4::RC4(unsigned char *cle, int tailleCle) : tailleTableauEtat(255){
+RC4::RC4(unsigned char *cle, unsigned int tailleCle) : tailleTableauEtat(255){
+    this->maCle.resize(tailleCle);
     copy(cle, cle+tailleCle, this->maCle.begin());
+
+    this->tableauEtat.resize(tailleTableauEtat);
     this->tailleCle = tailleCle;
     this->initCodageDecodage();
 
 }
 RC4::RC4(std::vector<unsigned char> cle): tailleTableauEtat(255) {
+    this->tableauEtat.resize(tailleTableauEtat);
     this->maCle = cle;
-    this->tailleCle = cle.size();
+    this->tailleCle = this->maCle.size();
     this->initCodageDecodage();
 }
 
 void RC4::genereCle() {
-        this->tableauEtat.resize(tailleTableauEtat);
         superrand cle( 1,255, this->tailleCle );
         std::vector <int> temp = cle.getTableau();
         //this->maCle = std::vector <unsigned char> (temp.begin(),temp.end());
