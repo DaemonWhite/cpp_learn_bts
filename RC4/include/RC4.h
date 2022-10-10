@@ -21,7 +21,7 @@ class RC4
         std::vector<unsigned char> maCle;
         std::vector<unsigned char> tableauEtat;
         unsigned int tailleCle;
-        unsigned int tailleTableauEtat;
+        const unsigned int tailleTableauEtat;
 
         void genereCle();
         void melangeTableauEtat();
