@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void afficheStat(superrand alah) {
+void afficheStat(superrand alah, const bool exc) {
     std::vector<int> moise;
 
     int choiceValue = alah[20];
 
-    cout << "Exclusif : " << endl << endl;
+    cout << "Exclusif : " << exc << endl << endl;
     cout << "Maxi : " << alah.getMaxi() << endl;
     cout << "Mini : " << alah.getMini() << endl;
     cout << "Taille :" << alah.getTaille() << endl << endl;
@@ -31,19 +31,17 @@ void afficheStat(superrand alah) {
 int main()
 {
 
-    const bool exc = false;
+    const bool exc = true;
     superrand alah(1, 5, 10, exc);
 
-    afficheStat(alah);
+    afficheStat(alah, exc);
 
     cout << endl << "Change maxi & change mini" << endl;
     alah.setMaxi(20);
     alah.setMini(5);
-    if (!exc) {
-        alah.setTaille(23);
-    }
+    alah.setTaille(23);
 
-    afficheStat(alah);
+    afficheStat(alah, exc);
 
 
     return 0;
