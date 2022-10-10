@@ -1,11 +1,11 @@
 #include "RC4.h"
-#include "superrand.h"
+#include "random.h"
 
 RC4::RC4(unsigned int tailleCle ): tailleTableauEtat(255){
     this->tailleCle = tailleCle;
 
     if (tailleCle == 0) {
-        this->tailleCle = superrand::valeurUnique(40, 255);
+        this->tailleCle = Random::valeurUnique(40, 255);
     }
     this->tableauEtat.resize(tailleTableauEtat);
     this->genereCle();
@@ -28,7 +28,7 @@ RC4::RC4(std::vector<unsigned char> cle): tailleTableauEtat(255) {
 }
 
 void RC4::genereCle() {
-        superrand cle( 1,255, this->tailleCle );
+        Random cle( 1,255, this->tailleCle );
         std::vector <int> temp = cle.getTableau();
         //this->maCle = std::vector <unsigned char> (temp.begin(),temp.end());
         maCle.resize(temp.size());

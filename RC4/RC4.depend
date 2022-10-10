@@ -29,9 +29,9 @@
 1665420069 /home/matheo/Projets/Cpp/cpp_learn_bts/RC4/include/RC4.h
 	<vector>
 
-1665420700 source:/home/matheo/Projets/Cpp/cpp_learn_bts/RC4/src/RC4.cpp
+1665440183 source:/home/matheo/Projets/Cpp/cpp_learn_bts/RC4/src/RC4.cpp
 	"RC4.h"
-	"superrand.h"
+	"random.h"
 
 1665400292 /home/matheo/Projets/Cpp/cpp_learn_bts/RC4/include/superrand.h
 	<iostream>
@@ -43,4 +43,9 @@
 	<stdlib.h>
 	<time.h>
 	<algorithm>
+
+1665440356 /home/matheo/Projets/Cpp/cpp_learn_bts/RC4/include/random.h
+	<iostream>
+	<vector>
+	<random>
 

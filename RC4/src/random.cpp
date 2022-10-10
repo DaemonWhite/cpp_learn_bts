@@ -1,12 +1,12 @@
-#include "superrand.h"
+#include "random.h"
 #include <stdlib.h>
 #include <time.h>
 #include <algorithm>
 
 
-std::mt19937 superrand::mt(time(NULL));
+std::mt19937 Random::mt(time(NULL));
 
-superrand::superrand(int mini, int maxi, int taille, bool exclusif)
+Random::Random(int mini, int maxi, int taille, bool exclusif)
 {
     this->maxi = maxi;
     this->mini = mini;
@@ -19,7 +19,7 @@ superrand::superrand(int mini, int maxi, int taille, bool exclusif)
 
 }
 
-superrand::~superrand()
+Random::~Random()
 {
     //dtor
 }
@@ -28,7 +28,7 @@ superrand::~superrand()
 
 //Private Methode
 
-void superrand::inversionMaxMini() {
+void Random::inversionMaxMini() {
     if (this->maxi < this->mini) {
         int tmp = this->mini;
 
@@ -38,7 +38,7 @@ void superrand::inversionMaxMini() {
 
 }
 
-void superrand::inversionMaxMini(int & mini, int & maxi) {
+void Random::inversionMaxMini(int & mini, int & maxi) {
     if (maxi < mini) {
         int tmp = mini;
 
@@ -49,13 +49,13 @@ void superrand::inversionMaxMini(int & mini, int & maxi) {
 
 //Private function
 
-int superrand::calculValeur()
+int Random::calculValeur()
 {
     int ret = this->dis(mt);
     return ret;
 }
 
-void superrand::testTaille() {
+void Random::testTaille() {
 
     int tmpSize = this->maxi - this->mini + 1;
     if (this->exclusif && tmpSize < this->taille) {
@@ -65,7 +65,7 @@ void superrand::testTaille() {
 }
 
 //Public function
-void superrand::remplirTab() {
+void Random::remplirTab() {
     this->dis = std::uniform_int_distribution <int>(this->mini, this->maxi);
     this->testTaille();
     std::vector<int> tmpTab;
@@ -94,7 +94,7 @@ void superrand::remplirTab() {
 
 }
 
-int superrand::valeurUnique(int valMini, int valMaxi) {
+int Random::valeurUnique(int valMini, int valMaxi) {
 
     inversionMaxMini(valMini, valMaxi);
     std::uniform_int_distribution <int> dis(valMini,valMaxi);
@@ -105,19 +105,19 @@ int superrand::valeurUnique(int valMini, int valMaxi) {
 //Public access
 
 //Acsesseur en ecriture.
-void superrand::setMaxi(int maxi) {
+void Random::setMaxi(int maxi) {
     this->maxi = maxi;
     this->inversionMaxMini();
     this->remplirTab();
 }
 
-void superrand::setMini(int mini) {
+void Random::setMini(int mini) {
     this->mini = mini;
     this->inversionMaxMini();
     this->remplirTab();
 }
 
-void superrand::setTaille(int taille) {
+void Random::setTaille(int taille) {
     this->taille = taille;
     this->inversionMaxMini();
     this->remplirTab();
@@ -125,19 +125,19 @@ void superrand::setTaille(int taille) {
 
 //Acsesseur en lecture.
 
-int superrand::getMaxi() const {
+int Random::getMaxi() const {
     return this->maxi;
 }
 
-int superrand::getMini() const {
+int Random::getMini() const {
     return this->mini;
 }
 
-int superrand::getTaille() const {
+int Random::getTaille() const {
     return this->taille;
 }
 
-int superrand::operator[] (int indice) const {
+int Random::operator[] (int indice) const {
 
     int ret = -1;
 
@@ -149,6 +149,6 @@ int superrand::operator[] (int indice) const {
 
 }
 
-std::vector <int> superrand::getTableau() {
+std::vector <int> Random::getTableau() {
     return this->tabRandom;
 }

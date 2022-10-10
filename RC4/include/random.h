@@ -4,7 +4,7 @@
 #include <vector>
 #include <random>
 
-class superrand
+class Random
 {
     private:
         std::uniform_int_distribution<int> dis;
@@ -21,7 +21,7 @@ class superrand
         static std::mt19937 mt;
 
     public:
-        superrand(int mini, int maxi, int taille, bool exclusif = false);
+        Random(int mini, int maxi, int taille, bool exclusif = false);
 
         //Get
         int getMaxi() const;
@@ -41,7 +41,7 @@ class superrand
 
 
         int operator[] (int indice) const;
-        ~superrand();
+        ~Random();
 
     protected:
 };
