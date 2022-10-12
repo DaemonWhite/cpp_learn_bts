@@ -1,9 +1,9 @@
 #include <iostream>
-#include "superrand.h"
+#include "random.h"
 
 using namespace std;
 
-void afficheStat(superrand alah, const bool exc) {
+void afficheStat(Random alah, const bool exc) {
     std::vector<int> moise;
 
     int choiceValue = alah[20];
@@ -32,7 +32,7 @@ int main()
 {
 
     const bool exc = true;
-    superrand alah(1, 5, 10, exc);
+    Random alah(1, 5, 10, exc);
 
     afficheStat(alah, exc);
 

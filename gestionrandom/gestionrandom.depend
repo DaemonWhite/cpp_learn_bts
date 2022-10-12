@@ -11,9 +11,9 @@
 
 1662978531 
 
-1664710748 source:/home/matheo/Projets/Cpp/cpp_learn_bts/gestionrandom/main.cpp
+1665613728 source:/home/matheo/Projets/Cpp/cpp_learn_bts/gestionrandom/main.cpp
 	<iostream>
-	"superrand.h"
+	"random.h"
 
 1664190164 /home/matheo/Projets/Cpp/cpp_learn_bts/gestionrandom/include/superrand.h
 	<iostream>
@@ -40,4 +40,15 @@
 	<stdlib.h>
 	<time.h>
 	<algorithm>
+
+1665616887 source:/home/matheo/Projets/Cpp/cpp_learn_bts/gestionrandom/src/random.cpp
+	"random.h"
+	<stdlib.h>
+	<time.h>
+	<algorithm>
+
+1665613713 /home/matheo/Projets/Cpp/cpp_learn_bts/gestionrandom/include/random.h
+	<iostream>
+	<vector>
+	<random>
 

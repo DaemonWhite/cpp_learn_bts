@@ -36,10 +36,10 @@
 			<Add directory="include" />
 		</Compiler>
 		<Unit filename="include/RC4.h" />
-		<Unit filename="include/superrand.h" />
+		<Unit filename="include/random.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/RC4.cpp" />
-		<Unit filename="src/superrand.cpp" />
+		<Unit filename="src/random.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
