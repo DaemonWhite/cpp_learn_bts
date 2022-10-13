@@ -1,4 +1,4 @@
-project('cproject', ['cpp', 'c'],
+project('RC4', ['cpp', 'c'],
           version: '0.1.0',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2',
@@ -6,19 +6,16 @@ project('cproject', ['cpp', 'c'],
                    ],
 )
 
-cppproject_sources = [
+RC4_sources = [
   'main.cpp',
 ]
 
 incdir = include_directories('include', 'src')
 
-cppproject_deps = [
-]
-
 subdir('include')
 subdir('src')
 
-executable('cppproject', cppproject_sources,
+executable('RC4', RC4_sources,
   include_directories : incdir,
   install: true,
 )

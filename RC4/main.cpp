@@ -20,7 +20,7 @@ int main()
     }
     cout << endl;
 
-    unsigned char superTab[cleA.size()+1];
+    unsigned char superTab[cleA.size()];
     RC4 testeB(cleA);
 
 
