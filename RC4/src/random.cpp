@@ -1,1 +1,1 @@
-/home/matheo/Projets/Cpp/cpp_learn_bts/gestionrandom/src/random.cpp
+../../gestionrandom/src/random.cpp
