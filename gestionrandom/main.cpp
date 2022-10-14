@@ -1,31 +1,29 @@
 #include <iostream>
 #include "random.h"
 
-using namespace std;
-
 void afficheStat(Random alah, const bool exc) {
     std::vector<int> moise;
 
     int choiceValue = alah[20];
 
-    cout << "Exclusif : " << exc << endl << endl;
-    cout << "Maxi : " << alah.getMaxi() << endl;
-    cout << "Mini : " << alah.getMini() << endl;
-    cout << "Taille :" << alah.getTaille() << endl << endl;
+    std::cout << "Exclusif : " << exc << std::endl << std::endl;
+    std::cout << "Maxi : " << alah.getMaxi() << std::endl;
+    std::cout << "Mini : " << alah.getMini() << std::endl;
+    std::cout << "Taille :" << alah.getTaille() << std::endl << std::endl;
 
     moise = alah.getTableau();
 
     for(long unsigned int i=0; i < moise.size(); i++){
-        cout << i + 1 << " : " << moise[i] << endl;
+        std::cout << i + 1 << " : " << moise[i] << std::endl;
     }
 
     if (choiceValue != -1) {
-        cout << endl << "Valeur 21 : " << choiceValue << endl;
+        std::cout << std::endl << "Valeur 21 : " << choiceValue << std::endl;
     } else {
-        cout << endl << "la valeur 21 n'existe pas" << endl;
+        std::cout << std::endl << "la valeur 21 n'existe pas" << std::endl;
     }
 
-    cout << "Valeur Unique : " << alah.valeurUnique(50, 73) << endl;
+    std::cout << "Valeur Unique : " << alah.valeurUnique(50, 73) << std::endl;
 }
 
 int main()
@@ -36,7 +34,7 @@ int main()
 
     afficheStat(alah, exc);
 
-    cout << endl << "Change maxi & change mini" << endl;
+    std::cout << std::endl << "Change maxi & change mini" << std::endl;
     alah.setMaxi(20);
     alah.setMini(5);
     alah.setTaille(23);
