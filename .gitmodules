@@ -1,0 +1,3 @@
+[submodule "cosmic-session"]
+	path = RC4/test
+	url = https://github.com/DaemonWhite/cpp_learn_bts/blob/main/gestionrandom/src/random.cpp
