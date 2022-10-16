@@ -24,7 +24,7 @@ objet RC4(std::vector<unsigned char> cle);
 ```cpp
 unsigned char octet; // un char corespond à un octet exploitable
 unsigned char chiffrer;
-insigned char dechiffrer;
+unsigned char dechiffrer;
 chiffrer = objet.chiffrage(octet);
 ```
 La donner est chiffrer pour la dechiffrer avec le même objet penssez à réinitialisé

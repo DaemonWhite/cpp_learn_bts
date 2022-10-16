@@ -56,7 +56,8 @@ void RC4::melangeTableauEtat() {
 }
 
 unsigned char RC4::chiffrage(unsigned char octet) {
-    this->i = this->i++ % this->tailleTableauEtat;
+
+    this->i = ( this->i+1 ) % this->tailleTableauEtat;
     this->j = (this->j + this->tableauEtat[this->i]) % this->tailleTableauEtat;
     unsigned int n=0;
     this->swap(&this->tableauEtat[this->i], &this->tableauEtat[this->j]);
