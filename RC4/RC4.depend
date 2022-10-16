@@ -49,3 +49,26 @@
 	<vector>
 	<random>
 
+1665918453 source:c:\users\matheo\documents\github\cpp_learn_bts\rc4\main.cpp
+	<iostream>
+	<RC4.h>
+	<vector>
+
+1665916728 c:\users\matheo\documents\github\cpp_learn_bts\rc4\include\rc4.h
+	<vector>
+
+1665916728 source:c:\users\matheo\documents\github\cpp_learn_bts\rc4\src\random.cpp
+	"random.h"
+	<stdlib.h>
+	<time.h>
+	<algorithm>
+
+1665916728 c:\users\matheo\documents\github\cpp_learn_bts\rc4\include\random.h
+	<iostream>
+	<vector>
+	<random>
+
+1665918316 source:c:\users\matheo\documents\github\cpp_learn_bts\rc4\src\rc4.cpp
+	"RC4.h"
+	"random.h"
+
