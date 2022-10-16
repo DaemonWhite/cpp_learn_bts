@@ -1,16 +1,11 @@
-# RC4
-
-## Dependance du Projet
-[gestionrandom](../gestionrandom)
+# gestionrandom
 
 ## Utilisation
 
 ### Constructeur
 ```
-
 //Sans clée au préalale
 objet Random(int mini, int maxi, int taille, bool exclusif = false);
-
 ```
 ### Aléatoire Rapide sans class
 ```
@@ -45,5 +40,4 @@ objet.setTaille(int taille);
 static std::mt19937 mt; //système aléatoire
 std::mt19937 Random::mt(time(NULL));
 std::uniform_int_distribution<int> dis;
-
 ```
