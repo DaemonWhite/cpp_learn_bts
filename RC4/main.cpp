@@ -16,6 +16,7 @@ int main()
     cleA = testeA.getCle();
 
     std::cout << "J'ai un jolie a et b :" << testeA.chiffrage(chiffreA) << " " << testeA.chiffrage(chiffreB) << std::endl;
+    std::cout << "Taille cle : " << testeA.getTailleCle() << std::endl;
     std::cout << "Qui à pour clée ";
 
     for (unsigned int i=0; i < cleA.size()-1; i++){ //affiche la clé de a
@@ -26,15 +27,14 @@ int main()
     unsigned char superTab[cleA.size()]; // Tableau standar
     RC4 testeB(cleA);
 
-
     copy(cleA.begin(), cleA.end(), superTab); //copy de la clé en vector dans un simple tableau
     RC4 testeC(superTab, cleA.size());
 
     std::cout << "dechiffre A avec un tableau standar : " << testeC.chiffrage(chiffreA) << std::endl;
+    std::cout << "Taille cle : " << testeC.getTailleCle() << std::endl << std::endl;
 
-    std::cout << "dechiffre A mais avec cle en paramêtres : " << testeB.chiffrage(chiffreA) << std::endl;
-
-
+    std::cout << "dechiffre A mais avec un vecteur : " << testeB.chiffrage(chiffreA) << std::endl;
+    std::cout << "Taille cle : " << testeB.getTailleCle() << std::endl;
 
     return 0;
 }
