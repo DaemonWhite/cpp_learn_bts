@@ -6,7 +6,7 @@
 ## Utilisation
 
 ### Constructeur
-```
+```cpp
 
 //Sans clée au préalale
 objet RC4(unsigned int tailleClee);
