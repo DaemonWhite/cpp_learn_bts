@@ -60,7 +60,7 @@ unsigned char RC4::chiffrage(unsigned char octet) {
     this->j = (this->j + this->tableauEtat[this->i]) % this->tailleTableauEtat;
     unsigned int n=0;
     this->swap(&this->tableauEtat[this->i], &this->tableauEtat[this->j]);
-    n = (this->tableauEtat[this->i], this->tableauEtat[this->j]) % this->tailleTableauEtat;
+    n = (this->tableauEtat[this->i] + this->tableauEtat[this->j]) % this->tailleTableauEtat;
 
     return octet ^ this->tableauEtat[n];
 }
