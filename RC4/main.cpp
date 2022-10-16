@@ -42,7 +42,7 @@ int main()
 
     testeB.initCodageDecodage();
     std::cout << "Si on fais dans le sense inverse sa ne marche point" << std::endl << std::endl;
-    std::cout << "Mauvais dechifrement " << testeB.chiffrage(chiffreB) << " " << testeB.chiffrage(chiffreA) << std::endl;
+    std::cout << "Mauvais dechifrement de a et b" << testeB.chiffrage(chiffreB) << " " << testeB.chiffrage(chiffreA) << std::endl;
 
     return 0;
 }
