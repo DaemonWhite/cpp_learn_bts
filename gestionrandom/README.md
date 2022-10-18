@@ -38,6 +38,7 @@ objet.setTaille(int taille);
 ## A retenir
 ```cpp
 static std::mt19937 mt; //système aléatoire
-std::mt19937 Random::mt(time(NULL));
-std::uniform_int_distribution<int> dis;
+std::mt19937 Random::mt(time(NULL)); // itialiste le statique
+std::uniform_int_distribution<int> dis(mini, max); // itialise la plage d'apparition pour que les éléments soives équitable
+dis(mt) // Passe le systéme aléatoire
 ```
