@@ -15,7 +15,7 @@ int main()
     testeA.initCodageDecodage(); // Reinitialise les donné pour le déchiffrage
     cleA = testeA.getCle();
 
-   std::cout << "Objetif chiffre a et b puis dechifrer avec toute les methode" << std::endl << std::endl;
+    std::cout << "Objetif chiffre a et b puis dechifrer avec toute les methode" << std::endl << std::endl;
 
     std::cout << "a et b en vertion chiffre : " << chiffreA << " " << chiffreB << std::endl;
     std::cout << "J'ai un jolie a et b :" << testeA.chiffrage(chiffreA) << " " << testeA.chiffrage(chiffreB) << std::endl;

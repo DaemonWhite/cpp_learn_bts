@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1665999415 source:c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\main.cpp
+	<iostream>
+	<FichierCrypte.h>
+
+1666000760 source:c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\src\fichiercrypte.cpp
+	"FichierCrypte.h"
+
+1666002739 c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\include\fichiercrypte.h
+	<string>
+	<fstream>
+
+1665993898 source:c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\src\random.cpp
+	"random.h"
+	<stdlib.h>
+	<time.h>
+	<algorithm>
+
+1665993898 c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\include\random.h
+	<iostream>
+	<vector>
+	<random>
+
+1665993898 source:c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\src\rc4.cpp
+	"RC4.h"
+	"random.h"
+
+1665993898 c:\users\matheo\documents\projet\cpp_learn_bts\fichiercrypte\fichiercrypte\include\rc4.h
+	<vector>
+
