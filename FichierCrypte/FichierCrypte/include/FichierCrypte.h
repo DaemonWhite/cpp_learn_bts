@@ -22,7 +22,7 @@ class FichierCrypte
         std::string getNomDestination();
         std::string getNomSource();
 
-        virtual ~FichierCrypte();
+        ~FichierCrypte();
 };
 
 #endif // FICHIERCRYPTE_H
