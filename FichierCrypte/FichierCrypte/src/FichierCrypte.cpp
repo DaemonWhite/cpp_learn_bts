@@ -2,6 +2,7 @@
 
 FichierCrypte::FichierCrypte(std::string source, bool cryptage, std::string extension)
 {
+    this->cryptage = cryptage;
     fichierSource.open(source);
     nomDestination = source;
     nomSource = source;
@@ -43,7 +44,7 @@ bool FichierCrypte::controleExtentionFichier(std::string extension) {
     bool ret = true;
     if (
            (extension.size() > 3)
-        || (extension.size() >= 0)
+        || (extension.size() != 1)
         ) {
         ret = false;
     }
