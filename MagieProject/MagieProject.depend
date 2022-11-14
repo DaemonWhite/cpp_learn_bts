@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1668424659 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\main.cpp
+	<iostream>
+	"Personne.h"
+
+1668425214 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\src\personne.cpp
+	"Personne.h"
+	"iostream"
+
+1668425795 c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\include\personne.h
+	<string>
+
