@@ -16,8 +16,8 @@ class Personne
 
     public:
         int getAge();
-        bool setAge(int age);
         std::string getNom();
+        bool setAge(int age);
         void sePresenter();
 
         virtual ~Personne();

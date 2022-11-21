@@ -1,12 +1,26 @@
 # depslib dependency file v1.0
-1668424659 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\main.cpp
+1669026915 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\main.cpp
 	<iostream>
-	"Personne.h"
+	"PapierMagie.h"
 
 1668425214 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\src\personne.cpp
 	"Personne.h"
 	"iostream"
 
-1668425795 c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\include\personne.h
+1669021865 c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\include\personne.h
+	<string>
+
+1669022058 c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\include\spectateur.h
+	<Personne.h>
+	<string>
+
+1669022709 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\src\spectateur.cpp
+	"Spectateur.h"
+	"iostream"
+
+1669026783 source:c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\src\papiermagie.cpp
+	"PapierMagie.h"
+
+1669026206 c:\users\matheo\documents\projet\cpp_learn_bts\magieproject\include\papiermagie.h
 	<string>
 

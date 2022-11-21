@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Spectateur.h"
+#include "PapierMagie.h"
 
 int main()
 {
@@ -8,6 +8,13 @@ int main()
     #elif __linux__
         std::cout << "moise";
     #endif // WIN32
+
+    PapierMagie lePapier;
+    std::cout << lePapier() << std::endl;
+    lePapier.setAge(22);
+    lePapier.setArgent(56);
+    std::cout << lePapier() << std::endl;
+
 
 
 
