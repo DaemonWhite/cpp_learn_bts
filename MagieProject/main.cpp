@@ -1,5 +1,6 @@
 #include <iostream>
 #include "PapierMagie.h"
+#include "Spectateur.h"
 
 int main()
 {
@@ -10,10 +11,11 @@ int main()
     #endif // WIN32
 
     PapierMagie lePapier;
-    std::cout << lePapier() << std::endl;
-    lePapier.setAge(22);
-    lePapier.setArgent(56);
-    std::cout << lePapier() << std::endl;
+    Spectateur dingo("Dingo",22,56);
+    dingo.arriverSurScene();
+    dingo.sePresenter();
+    dingo.remplirPapier(lePapier);
+    std::cout << lePapier();
 
 
 

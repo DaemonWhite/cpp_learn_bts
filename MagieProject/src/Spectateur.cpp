@@ -11,6 +11,10 @@ Spectateur::~Spectateur()
     //dtor
 }
 
+void Spectateur::remplirPapier(PapierMagie & lePapier) {
+    lePapier.setAge(this->age);
+    lePapier.setArgent(this->argent);
+}
 
 void Spectateur::sePresenter() {
     std::cout << "[Spectateur] -- Bonjour, je m'appelle Dingo" << std::endl;

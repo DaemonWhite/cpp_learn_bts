@@ -1,6 +1,7 @@
 #ifndef SPECTATEUR_H
 #define SPECTATEUR_H
-#include <Personne.h>
+#include "Personne.h"
+#include "PapierMagie.h"
 #include <string>
 
 class Spectateur : public Personne
@@ -10,6 +11,7 @@ class Spectateur : public Personne
         virtual ~Spectateur();
         void arriverSurScene();
         void sePresenter();
+        void remplirPapier(PapierMagie & lePapier);
 
     private:
         unsigned short argent;

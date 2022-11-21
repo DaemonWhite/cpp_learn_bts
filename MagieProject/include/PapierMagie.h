@@ -1,7 +1,6 @@
 #ifndef PAPIERMAGIE_H
 #define PAPIERMAGIE_H
 #include <string>
-
 class PapierMagie
 {
     public:
