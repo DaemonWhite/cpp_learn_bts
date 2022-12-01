@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1669891590 source:c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\main.cpp
+	"IHM.h"
+
+1669892318 c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\include\ihm.h
+	"Precipitation.h"
+
+1669885300 c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\include\precipitation.h
+	<vector>
+	<string>
+	<array>
+	"DoneeMois.h"
+
+1669885335 c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\include\doneemois.h
+	<string>
+
+1669882044 source:c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\src\doneemois.cpp
+	"DoneeMois.h"
+
+1669894544 source:c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\src\ihm.cpp
+	"IHM.h"
+	<iostream>
+	<string>
+	<array>
+	"DoneeMois.h"
+
+1669895450 source:c:\users\matheo\documents\projet\cpp_learn_bts\pluviometrie\src\precipitation.cpp
+	"Precipitation.h"
+
